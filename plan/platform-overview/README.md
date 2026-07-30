@@ -1,8 +1,8 @@
-# Imperyn Platform — Build Plan
+# Interface Platform — Build Plan
 
 ## Product thesis
 
-Imperyn should be an opinionated control plane for forward-deployed engineering teams. It should take an enterprise from raw data to a production-ready data/AI application—ingestion, modelling, APIs, governed agents, deployment, and business interfaces—without manually stitching together ten tools.
+Interface should be an opinionated control plane for forward-deployed engineering teams. It should take an enterprise from raw data to a production-ready data/AI application—ingestion, modelling, APIs, governed agents, deployment, and business interfaces—without manually stitching together ten tools.
 
 The platform should integrate proven execution systems rather than recreate them. Its core value is a common resource model, reusable solution blueprints, Git-backed changes, governance, and one operating experience.
 
@@ -45,12 +45,12 @@ Separate the system into a proprietary control plane and pluggable execution pla
 
 ```text
 ┌─────────────────────────────────────────────────────┐
-│ Interface                                           │
+│ Console                                             │
 │ Workspaces · Solutions · Changes · Approvals · Runs │
 └─────────────────────────┬───────────────────────────┘
                           │
 ┌─────────────────────────▼───────────────────────────┐
-│ Imperyn Control Plane                               │
+│ Interface Control Plane                             │
 │ Catalog · Resource API · Reconciler · Policy        │
 │ Git sync · Workflow orchestration · Audit           │
 └──────┬──────────────┬──────────────┬───────────────┘
@@ -84,7 +84,7 @@ Initial first-class resources:
 Example:
 
 ```yaml
-apiVersion: imperyn.ai/v1
+apiVersion: interface.ai/v1
 kind: Solution
 metadata:
   name: feedback-intelligence
@@ -163,7 +163,7 @@ Keep workflow state, episodic history, approved knowledge, source-of-truth entit
 - **Frontend:** Next.js, TypeScript, TanStack Query, Monaco, React Flow, and server-sent events.
 - **Control plane:** TypeScript/NestJS or Go, PostgreSQL, Temporal, OpenFGA/OPA-style policy, OpenTelemetry, and Redis only for ephemeral needs.
 - **Data plane:** Airbyte, dbt Core, object storage, Postgres plus one enterprise warehouse/lakehouse, and OpenLineage-compatible events.
-- **Runtime:** FastAPI template, MCP server template, a thin Imperyn agent SDK over Temporal, Docker, and one initial deployment provider.
+- **Runtime:** FastAPI template, MCP server template, a thin Interface agent SDK over Temporal, Docker, and one initial deployment provider.
 - **Secrets:** store opaque references to a managed secret store instead of customer credentials in the control-plane database.
 
 ## MVP: Feedback Intelligence

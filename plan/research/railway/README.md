@@ -198,13 +198,13 @@ Resource measurements
 
 Secrets should be encrypted at rest, access should be audited, and build-time secret access should be separated from runtime access. Isolation must exist at the authorization, compute, network, filesystem, and telemetry layers.
 
-## Why this matters for Imperyn
+## Why this matters for Interface
 
-Railway can serve as Imperyn's initial execution layer while the product is young. The application, API, workers, and databases can live in one visible project so the team can focus on product behavior before operating custom infrastructure.
+Railway can serve as Interface's initial execution layer while the product is young. The application, API, workers, and databases can live in one visible project so the team can focus on product behavior before operating custom infrastructure.
 
-Imperyn should still keep its service boundaries, data model, and configuration portable. Railway is an execution and operations layer, not the product architecture.
+Interface should still keep its service boundaries, data model, and configuration portable. Railway is an execution and operations layer, not the product architecture.
 
-The deeper lesson for Imperyn is that Railway's main value is not simply running containers. Its value is the reconciliation loop that absorbs operational complexity:
+The deeper lesson for Interface is that Railway's main value is not simply running containers. Its value is the reconciliation loop that absorbs operational complexity:
 
 ```text
 User intent
